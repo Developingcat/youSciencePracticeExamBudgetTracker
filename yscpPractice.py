@@ -70,18 +70,42 @@ def getMonthlyIncome():
         else: 
             print("Invalid input, please enter a non-negative number.")
 
-def addExpense():
-        print(input("Please input the category you'd like to add the expense of: "))
-        category = input()
-        while True:
-            amount = input() 
-
-            if amount >= 0:
-                expenses[category] = expenses.get(category, 0) + amount 
+def addExpense(expenses):
+        expenseAdd = input("Please input the category you'd like to add the expense of: ")
+        print("Total Expense Total:" + expenseAdd)
+        
+        amountTotal = input("Please input the amount you'd like to add to the expense: ")
+        print = ("Total amount entered in: ")
+        
+        while True: 
+            if amount >= "0":
+                expenses[category] = expenses.get(category, "0") + amount 
                 print("Expense added!") 
                 break 
             else:
                 print("Invalid expense amount. Try again.")
+
+
+
+def displaySummary(monthlyIncome, expenses):
+    # category = input("Please input a category: ")  
+    # amount = float(input("Please input the correct amount: "))
+    expenses[category] = expenses.get(category, 0) + amount 
+    # expenses = {category}
+    print("Total expenses: $", monthlyIncome)
+    print("Expenses:") 
+    for category, amount in expenses.items():
+        percentage = (amount/monthlyIncome) * 100 
+        print(category,":", amount, "(",percentage,").")
+        print("This is a test to make sure this works.")
+    
+
+    
+    
+# print(monthlyIncome) 
+# print                              
+# print(total expenses) 
+# print(remainingBudget) 
 
 
 
@@ -92,7 +116,7 @@ def main():
     print("Welcome to the Budget and Expense Planner!")
     print("##########################################")
     monthlyIncome = input("Please enter your monthly income!: ")
-    print(monthlyIncome)
+    print("$",monthlyIncome)
     # monthlyIncome == getMonthlyIncome()
     expenses = {} 
     while True: 
@@ -103,13 +127,14 @@ def main():
         print("3.) Exit") 
         print("################################")
         print("################################")
+        
         userChoice = input()
-        if userChoice == 1: 
+        if userChoice == "1": 
             addExpense(expenses)
             print(addExpense)
-        elif userChoice == 2:
+        elif userChoice == "2":
             displaySummary(monthlyIncome, expenses)
-        elif userChoice == 3: 
+        elif userChoice == "3": 
             print("Goodbye.") 
             break
         else:
